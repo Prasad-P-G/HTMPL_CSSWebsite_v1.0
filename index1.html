@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Below 2 lines to be added for every html page -->
+        <meta charset="UTF-8"> <!-- Characters encoding whichis standard used , "meta" contains description about the page which is required by search engine
+        this will tell the browser that , what the page contains within it -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- <titile>BPG Techno Domain</titile> -->
+
+        <!-- link to styles of the page -->
+        <link rel="stylesheet" href="boostracttest.css">
+        <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
+
+    <body>
+
+
+      <button type="button" class="btn">Primary</button>
+
+
+        <nav style="display: flex; justify-content: space-between;padding: 20px;">
+            <a href="#">
+              <h2 class="logo-text">BPG Techno Domain</h2>
+            </a>    
+            <ul  style="display: flex;gap: 20px;">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>              
+            </ul>            
+          </nav>
+
+          <!-- bootstrap navbar -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">BPG Techno Domain</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div style="background: red;">
+            <i class="fa-brands fa-facebook"></i>           
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+          </div>
+       
+               <div style="max-width: 500px; height: 100px;background: rgb(33, 85, 182); color: white; text-align: center; display: flex;
+               align-items: center; justify-content: center; margin: auto">
+                <h2 style="text-align: center;">BPG Techno Domain</h2>
+               </div>
+               <button  onclick="speedTest()" >Speed test</button>
+        <script src="./Bootstrap/bootstrap.min.js"></script>
+        <script src="test.js"></script>
+    </body>
+</html>
