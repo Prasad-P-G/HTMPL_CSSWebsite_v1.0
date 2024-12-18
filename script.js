@@ -12,7 +12,6 @@ menuCloseButton.addEventListener("click", () => {
 });
 
 function myFunction() {
-  debugger;
   document.getElementById("status").style.display = "block";
   document.getElementById("status").style.color = "red";
   document.getElementById("status").innerHTML =
@@ -120,8 +119,8 @@ var pages = {
               culture,Changes,methods,skills and many more
             </p>
             <div class="buttons">
-              <a href="#" class="button view-more">View More</a>
-              <a href="#" class="button contact-us" onclick="getContent('contact')">Contact Us</a>
+              <a class="button view-more">View More</a>
+              <a class="button contact-us" onclick="getContent('contact')">Contact Us</a>
             </div>
           </div>
 
