@@ -190,7 +190,7 @@ header .navbar {
 .hero-section .section-content {
   display: flex;
   align-items: center;
-  min-height: 90vh;
+  min-height: 94vh;
   color: white;
   justify-content: space-between;
   max-width: 80%;
@@ -470,7 +470,7 @@ header .navbar {
   padding: 50px 0 120px;
   background: rgb(204, 208, 211);
   margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
 }
 
 .contact-section .section-content {
@@ -534,9 +534,9 @@ header .navbar {
 /* footer section styling */
 
 .footer-section {
-  padding: 20px 0;
+  padding: 5px 0;
   background: rgb(24, 67, 43);
-
+  position: sticky;
   bottom: 0;
   width: 100%;
 }
@@ -552,11 +552,11 @@ header .navbar {
 
 .footer-section .social-link-list {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .footer-section .social-link-list .social-link {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .footer-section .social-link-list .social-link:hover {
@@ -770,6 +770,7 @@ header .navbar {
   .service-section {
     width: 100%;
     margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .service-section .service-details {
@@ -780,6 +781,13 @@ header .navbar {
     display: block;
     width: calc(100% / 2 - 10px);
   }
+
+  .section-list .service-item .service-image {
+    width: 70%;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius-circle);
+  }
+
   /* Product section styling */
   .product-section {
     margin-top: 60px;
@@ -899,12 +907,30 @@ header .navbar {
   }
   .footer-section .section-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
   }
+
+  .footer-section .section-content .copyright-text {
+    font-size: small;
+  }
+
+  .footer-section .section-content .social-link {
+    font-size: 12px;
+  }
+
+  .footer-section .section-content .policy-link {
+    font-size: 12px;
+  }
+
   .company-logo {
     width: 60px;
     height: 60px;
     border-radius: 40%;
+  }
+  .navbar .nav-logo .logo-text {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
   }
   .contact-section {
     padding: 20px 0 50px;
@@ -912,6 +938,19 @@ header .navbar {
     margin-top: 50px;
     margin-bottom: 0;
   }
+  .contact-form .submit-button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 16px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+  }
+  .contact-section {
+    margin-bottom: 5px;
+  }
+
   .about-section {
     margin-top: 50px;
   }
