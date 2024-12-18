@@ -528,6 +528,7 @@ function getContent(page) {
       //menuOpenButton.click();
       //menuCloseButton.click();
       //document.getElementById("status").style.color = "black";
+      document.body.classList.remove("show-mobile-menu");
 
       document.getElementById("contactid").style.background = "";
       document.getElementById("servicesid").style.background = "";
@@ -565,13 +566,14 @@ function getContent(page) {
       // item.style.fontsize = "10px";
 
       contentToReturn = pages.contact;
-      menuCloseButton.click();
+      //menuCloseButton.click();
+      document.body.classList.remove("show-mobile-menu");
       console.log("contact page to load...");
       break;
     default:
       contentToReturn = pages.home;
       console.log("default about to load...");
-      menuCloseButton.click();
+      //menuCloseButton.click();
       // document.getElementById("/").style.background = "#207fd2";
       // document.getElementById("/").style.color = "black";
       document.getElementById("contactid").style.background = "";
