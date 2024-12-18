@@ -180,9 +180,13 @@ header .navbar {
 
 /* hero section styling */
 
-.hero-section {
+/* .hero-section {
   min-height: 90vh;
   background: var(--primary-color);
+} */
+.hero-section {
+  min-height: 90vh;
+  background: rgb(86, 140, 215);
 }
 
 .hero-section #status {
@@ -695,7 +699,7 @@ header .navbar {
     text-align: center;
     padding: 10px;
     align-items: center;
-    padding-top: 70px;
+    padding-top: 80px;
     min-height: 50vh;
   }
 
