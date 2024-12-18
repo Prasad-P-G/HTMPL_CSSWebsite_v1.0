@@ -687,10 +687,6 @@ header .navbar {
     top: 30px;
   }
 
-  .hero-section {
-    min-height: 90vh;
-  }
-
   .hero-section .section-content {
     flex-direction: column-reverse;
     justify-content: center;
