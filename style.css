@@ -180,14 +180,14 @@ header .navbar {
 
 /* hero section styling */
 
-/* .hero-section {
-  min-height: 90vh;
-  background: var(--primary-color);
-} */
 .hero-section {
   min-height: 90vh;
-  background: rgb(86, 140, 215);
+  background: var(--primary-color);
 }
+/* .hero-section {
+  min-height: 90vh;
+  background: rgb(86, 140, 215);
+} */
 
 .hero-section #status {
   color: white;
