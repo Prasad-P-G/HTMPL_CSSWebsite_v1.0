@@ -6,10 +6,90 @@ menuOpenButton.addEventListener("click", function () {
   document.body.classList.toggle("show-mobile-menu");
 });
 
-// close menu when the close button is clicked
+//close menu when the close button is clicked
 menuCloseButton.addEventListener("click", () => {
   menuOpenButton.click();
 });
+
+function myFunction() {
+  debugger;
+  document.getElementById("status").style.display = "block";
+  document.getElementById("status").style.color = "red";
+  document.getElementById("status").innerHTML =
+    "Please Wait, your message is sending...";
+
+  myVar = setTimeout((show) => {
+    statusMsg();
+  }, 5000);
+}
+
+function statusMsg() {
+  document.getElementById("status").style.color = "green";
+  document.getElementById("status").innerHTML =
+    "Your Message has been successfully sent!, thanks for contacting us.";
+  document.getElementById("submitBtn").style.disabled = false;
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
+  callHome();
+}
+function callHome() {
+  var varload = setTimeout((cal) => {
+    document.getElementById("contactid").style.background = "";
+    document.getElementById("status").style.color = "black";
+    getContent("home");
+  }, 5000);
+}
+
+function contactLoad() {
+  document.getElementById("status").style.display = "none";
+}
+
+function sendMail() {
+  backcolor = "mycolor";
+
+  var params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  if (
+    params.name.trim().length > 0 &&
+    params.email.trim().length > 0 &&
+    params.message.trim().length > 0
+  ) {
+    // document.getElementById("submitBtn").style.disabled = true;
+
+    myFunction();
+
+    const serviceId = "service_wphjbnh";
+    const templateId = "template_x152ouq";
+
+    //send EMAIL USING EMIAL JS
+
+    // emailjs
+    //   .send(serviceId, templateId, params)
+    //   .then((res) => {
+    //     document.getElementById("name").value = "";
+    //     document.getElementById("email").value = "";
+    //     document.getElementById("message").value = "";
+
+    //     console.log("Email sent successfully - ", res);
+    //     //getContent("contact");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  } else {
+    alert("All fields are mandatory, kindly provide proper details.");
+    return;
+  }
+
+  //registerEvent("");
+  // document.getElementById("contactid").style.background = "";
+  //getContent("home");
+}
 
 /*
 const swiper = new Swiper(".slider-wrapper", {
@@ -31,7 +111,7 @@ var pages = {
   home: `<section class="hero-section">
         <div class="section-content">
           <div class="hero-details">
-            <h2 class="title">Research. Innovation. Discover.</h2>
+            <h2 class="title">Research. Innovate. Discover.</h2>
             <h3 class="subtitle">One-Place for Your Innovative Ideas</h3>
             <p class="description">
               We are a place where together can learn new things and be
@@ -41,7 +121,7 @@ var pages = {
             </p>
             <div class="buttons">
               <a href="#" class="button view-more">View More</a>
-              <a href="#" class="button contact-us">Contact Us</a>
+              <a href="#" class="button contact-us" onclick="getContent('contact')">Contact Us</a>
             </div>
           </div>
 
@@ -49,6 +129,7 @@ var pages = {
             <img src="./images/hero.jpg" alt="hero" class="hero-mage" />
           </div>
         </div>
+        <div id="status" class="heromsg"></div>
       </section>
 `,
   services: `<section id="services" class="service-section">
@@ -377,6 +458,59 @@ var pages = {
           </div>
         </div>
       </section>`,
+  contact: ` <section class="contact-section" onload="contactLoad()">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-content">
+        <ul class="contact-info-list">
+          <li class="contact-info">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <p class="text">No.4 , Tejaswini Nagar, Dharwad , Karnataka - 580004</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <p>contact@bpgtechnosystem.in</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <p>(+91)8073045768</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-clock"></i>
+            <p>Monday - Friday: 9:00 AM - 9:00 PM</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-clock"></i>
+            <p>Support Team: 24/7 Available</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-globe"></i>
+            <p>www.bpgtechnosystem.in</p>
+          </li>
+        </ul>
+         
+        <form action="#" class="contact-form">
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            class="form-input"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            class="form-input"
+            required
+          />
+          <textarea placeholder="Your Message" id="message" class="form-input" required>
+          </textarea>
+          <button class="submit-button" id="submitBtn" onclick="sendMail()">Submit</button>
+          <div id="status" class="statusMessage"></div>
+        </form>
+      </div>
+      
+    </section>`,
 };
 
 function mainLoad() {
@@ -384,17 +518,29 @@ function mainLoad() {
   console.log("main about to load...");
 }
 
+var backcolor = "default";
+
 function getContent(page) {
-  var contentToReturn;
+  //var contentToReturn;
 
   switch (page) {
     case "home":
-      console.log("home about to load...");
       contentToReturn = pages.home;
       //menuOpenButton.click();
       //menuCloseButton.click();
+      //document.getElementById("status").style.color = "black";
+
+      document.getElementById("contactid").style.background = "";
+      document.getElementById("servicesid").style.background = "";
+      document.getElementById("productsid").style.background = "";
+      document.getElementById("aboutid").style.background = "";
+
+      //document.getElementById("home").style.color = "black";
+      backcolor = "";
+      //document.getElementById("status").style.color = "black";
       break;
     case "services":
+      backcolor = "red";
       contentToReturn = pages.services;
       menuCloseButton.click();
       console.log("services about to load...");
@@ -409,11 +555,103 @@ function getContent(page) {
       menuCloseButton.click();
       console.log("About page to load...");
       break;
+    case "contact":
+      backcolor = "mycolor";
+      document.getElementById("homeid").style.background = "";
+      document.getElementById("/").style.background = "";
+      document.getElementById("contactid").style.background = "#207fd2";
+      document.getElementById("contactid").style.padding = "5px";
+      document.getElementById("contactid").style.fontsize = "10px";
+      // item.style.padding = "5px";
+      // item.style.fontsize = "10px";
+
+      contentToReturn = pages.contact;
+      menuCloseButton.click();
+      console.log("contact page to load...");
+      break;
     default:
       contentToReturn = pages.home;
       console.log("default about to load...");
       menuCloseButton.click();
+      // document.getElementById("/").style.background = "#207fd2";
+      // document.getElementById("/").style.color = "black";
+      document.getElementById("contactid").style.background = "";
+      document.getElementById("servicesid").style.background = "";
+      document.getElementById("productsid").style.background = "";
+      document.getElementById("aboutid").style.background = "";
       break;
   }
+
   document.getElementById("content").innerHTML = contentToReturn;
+  //menuCloseButton.click();
+  registerEvent(page);
+}
+
+function registerEvent(page) {
+  var menuselectionId = document.querySelectorAll("#menuitems li");
+  menuselectionId.forEach((item) => {
+    //registering the event for each menu item
+    item.addEventListener("click", () => {
+      menuselectionId.forEach((i) => {
+        i.style.background = "";
+        document.getElementById("/").style.background = "";
+      });
+
+      item.style.background = "#207fd2";
+      item.style.padding = "5px";
+      item.style.fontsize = "10px";
+
+      // item.style.background = "green";
+      // if (backcolor !== "mycolor") {
+      //   item.style.background = "black";
+      //   item.style.padding = "5px";
+      //   item.style.fontsize = "10px";
+
+      // } else {
+      //   item.style.background = "";
+      //   document.getElementById("/").style.background = "green";
+      //   document.getElementById("contact").style.background = "";
+      // }
+
+      if (backcolor === "mycolor") {
+        document.getElementById("/").style.background = "";
+        backcolor = "";
+      } else {
+        document.getElementById("/").style.background = "";
+        backcolor = "";
+      }
+    });
+    //item.style.background = "#207fd2";
+
+    //alert(backcolor);
+  });
+
+  if (page === "home" || page === "/") {
+    menuselectionId.forEach((item) => {
+      document.getElementById("contact").style.background = "";
+      //item.style.backcolor = "";
+    });
+    // document.getElementById("/").style.background = "#207fd2";
+    document.getElementById("status").style.color = "black";
+
+    document.getElementById("/").style.background = "#207fd2";
+
+    document.getElementById("/").style.fontsize = "10px";
+    document.getElementById("/").style.borderRadius = 0;
+    document.getElementById("contact").style.background = "";
+    //menuOpenButton.click();
+  } else {
+    document.getElementById("/").style.background = "";
+  }
+
+  if (backcolor === "mycolor") {
+    document.getElementById("contact").style.background = "red";
+    document.getElementById("contact").style.background = "";
+    backcolor = "";
+  } else {
+    document.getElementById("contact").style.background = "";
+
+    backcolor = "";
+  }
+  //menuCloseButton.click();
 }

@@ -73,6 +73,19 @@ img {
   width: 100%;
 }
 
+.company-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 40%;
+}
+
+.logoItems {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 /* navbar styling */
 header {
   background-color: var(--primary-color);
@@ -104,10 +117,13 @@ header .navbar {
 
 .navbar .nav-menu .nav-link {
   color: white;
-  padding: 10px 18px;
+  padding: 5px 18px 5px 18px;
   border-radius: var(--border-radius-m);
   font-size: 14px;
   transition: 0.5s ease;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .section-content {
@@ -117,14 +133,43 @@ header .navbar {
 }
 
 .navbar .nav-menu .nav-link:hover {
+  color: rgb(233, 234, 237);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* .navbar .nav-menu .nav-link:hover {
   background: var(--secondary-blue-color);
   color: black;
   font-weight: bold;
+} */
+
+/* .navbar .nav-menu .nav-link:active {
+  background: white;
+  color: black;
+  font-weight: bold;
+} */
+
+#menuitems li.active {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-menu .nav-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navbar .nav-logo .logo-text {
   color: white;
   font-size: 22px;
   font-weight: bold;
+}
+.navbar .nav-logo {
+  cursor: pointer;
 }
 
 .navbar :where(#menu-close-button, #menu-open-button) {
@@ -134,14 +179,18 @@ header .navbar {
 /* hero section styling */
 
 .hero-section {
-  min-height: 100vh;
+  min-height: 90vh;
   background: var(--primary-color);
+}
+
+.hero-section #status {
+  color: white;
 }
 
 .hero-section .section-content {
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: 90vh;
   color: white;
   justify-content: space-between;
   max-width: 80%;
@@ -212,7 +261,8 @@ header .navbar {
 /* Service section styling */
 .service-section {
   width: 100%;
-  padding: 80px 0px;
+  margin-top: 150px;
+  margin-bottom: 20px;
 }
 
 .service-section .section-content {
@@ -291,7 +341,8 @@ header .navbar {
 
 /* product section styling */
 .product-section {
-  padding: 30px 0;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 .product-section .text {
@@ -306,6 +357,7 @@ header .navbar {
   align-items: center;
   gap: 20px;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .product-section .product-list .product-item {
@@ -349,7 +401,7 @@ header .navbar {
 /* About section styling */
 
 .about-section {
-  margin: 50px;
+  margin-top: 100px;
 }
 
 .about-section .about-details {
@@ -413,6 +465,104 @@ header .navbar {
   padding: 5px;
 }
 
+/* conctact us section styling */
+.contact-section {
+  padding: 50px 0 120px;
+  background: rgb(204, 208, 211);
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.contact-section .section-content {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.contact-section .contact-info-list .contact-info {
+  display: flex;
+
+  margin: 5px 0;
+  align-items: center;
+}
+
+.contact-section .contact-info-list .contact-info i {
+  padding: 10px;
+  font-size: 18px;
+}
+.contact-section .contact-form {
+  max-width: 50%;
+}
+.contact-form .form-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  background: white;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.contact-form textarea.form-input {
+  height: 100px;
+  padding: 12px;
+  resize: vertical;
+}
+
+.contact-form .form-input:focus {
+  border-color: var(--secondary-blue-color);
+}
+
+.contact-form .submit-button {
+  padding: 10px 26px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 16px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.contact-form .submit-button:hover {
+  background: transparent;
+  color: black;
+  border: solid green;
+}
+
+/* footer section styling */
+
+.footer-section {
+  padding: 20px 0;
+  background: rgb(24, 67, 43);
+
+  bottom: 0;
+  width: 100%;
+}
+.footer-section :where(.copyright-text, .social-link, .policy-link) {
+  color: white;
+}
+
+.footer-section .section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-section .social-link-list {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-section .social-link-list .social-link {
+  font-size: 24px;
+}
+
+.footer-section .social-link-list .social-link:hover {
+  color: var(--primary-color);
+}
+
 /*  
 
 .about-list .about-item {
@@ -464,6 +614,23 @@ header .navbar {
 
 /* Responsive media query code for max width 900px */
 @media screen and (max-width: 900px) {
+  .navbar .nav-menu .nav-link {
+    color: white;
+    padding: 0px 8px 5px 8px;
+    border-radius: var(--border-radius-m);
+    font-size: 14px;
+    transition: 0.5s ease;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .company-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 40%;
+    cursor: pointer;
+  }
   .navbar .nav-menu {
     display: block;
     position: fixed;
@@ -477,6 +644,7 @@ header .navbar {
     padding: 100px;
     background: white;
     transition: left 0.3s ease;
+    color: white;
   }
 
   /* toggling on click of openMenu button */
@@ -536,7 +704,8 @@ header .navbar {
   }
 
   .hero-section .hero-details :is(.title, .subtitle, .description),
-  .service-section .service-details {
+  .service-section .service-details,
+  .contact-section .contact-form {
     max-width: 100%;
   }
 
@@ -600,7 +769,7 @@ header .navbar {
 
   .service-section {
     width: 100%;
-    padding: 80px 0px;
+    margin-top: 30px;
   }
 
   .service-section .service-details {
@@ -612,6 +781,9 @@ header .navbar {
     width: calc(100% / 2 - 10px);
   }
   /* Product section styling */
+  .product-section {
+    margin-top: 60px;
+  }
   .product-section .product-list {
     gap: 30px;
   }
@@ -658,6 +830,21 @@ header .navbar {
   .about-section .about-details {
     width: 100%;
     margin: auto;
+  }
+
+  .contact-section .section-content {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 18px;
+  }
+
+  .contact-info p {
+    font-size: 12px;
+  }
+
+  .footer-section .section-content {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -709,5 +896,23 @@ header .navbar {
   .about-section .about-details {
     width: 100%;
     margin: auto;
+  }
+  .footer-section .section-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 40%;
+  }
+  .contact-section {
+    padding: 20px 0 50px;
+    background: rgb(204, 208, 211);
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  .about-section {
+    margin-top: 50px;
   }
 }

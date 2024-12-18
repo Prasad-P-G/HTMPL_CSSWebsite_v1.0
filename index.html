@@ -13,7 +13,7 @@
         this will tell the browser that , what the page contains within it -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>BPG Techno Domain</title>
+    <title>BPG Techno System</title>
 
     <link
       rel="stylesheet"
@@ -41,31 +41,39 @@
     <!-- header / navibar -->
     <header>
       <nav class="navbar section-content">
-        <a href="#" class="nav-logo">
-          <h2 class="logo-text">BPG Techno Domain</h2>
-        </a>
+        <div class="logoItems" onclick="getContent('/')">
+          <img src="./images/logoR.jpg" alt="ssm" class="company-logo" />
+          <a class="nav-logo">
+            <h2 class="logo-text">BPG Techno System</h2>
+          </a>
+        </div>
 
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="menuitems">
           <button id="menu-close-button" class="fas fa-times"></button>
 
-          <li class="nav-item">
-            <a href="#" onclick="getContent('/')" class="nav-link">Home</a>
+          <li class="nav-item" id="homeid">
+            <a onclick="getContent('home')" id="/" class="nav-link">Home</a>
           </li>
-          <li class="nav-item">
-            <a href="#" onclick="getContent('about')" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" onclick="getContent('services')" class="nav-link"
+
+          <li class="nav-item" id="servicesid">
+            <a onclick="getContent('services')" id="services" class="nav-link"
               >Services</a
             >
           </li>
-          <li class="nav-item">
-            <a href="#" onclick="getContent('products')" class="nav-link"
+          <li class="nav-item" id="productsid">
+            <a onclick="getContent('products')" id="products" class="nav-link"
               >Products</a
             >
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
+          <li class="nav-item" id="aboutid">
+            <a onclick="getContent('about')" id="about" class="nav-link"
+              >About</a
+            >
+          </li>
+          <li class="nav-item" id="contactid">
+            <a onclick="getContent('contact')" id="contact" class="nav-link"
+              >Contact</a
+            >
           </li>
         </ul>
         <button id="menu-open-button" class="fas fa-bars"></button>
@@ -442,21 +450,98 @@
           </div>
         </div>
       </section> -->
+
+      <!-- Contact section -->
+      <!-- <section class="contact-section">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-content">
+        <ul class="contact-info-list">
+          <li class="contact-info">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <p>No.4 , Tejaswini Nagar, Dharwad , Karnataka - 580004</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <p>contact@bpgtechnosystem.in</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <p>(+91)8073045768</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-clock"></i>
+            <p>Monday - Friday: 9:00 AM - 9:00 PM</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-clock"></i>
+            <p>Support Team: 24/7 Available</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-globe"></i>
+            <p>www.bpgtechnosystem.in</p>
+          </li>
+        </ul>
+
+        <form action="#" class="contact-form">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="form-input"
+            id="name"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="form-input"
+            id="email"
+            required
+          />
+          <textarea placeholder="Your Message" id="message" class="form-input" required>
+          </textarea>
+          <button class="submit-button">Submit</button>
+        </form>
+      </div>
+    </section> -->
     </main>
 
-    <!-- <div class="social-link-list">
-            <a href="#" class="social-link"
-              ><i class="fa-brands fa-facebook"></i
-            ></a>
-            <a href="#" class="social-link"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="#" class="social-link"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
-          </div> -->
+    <!-- Footer section -->
+    <footer class="footer-section">
+      <div class="section-content">
+        <p class="copyright-text">&copy; 2024 BPG Techno System</p>
+
+        <div class="social-link-list">
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="social-link"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </div>
+
+        <p class="policy-text">
+          <a href="#" class="policy-link">Privacy policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <!--  -->
 
     <!-- script -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "fa2ZDoyVxjYjBYVdv",
+        });
+      })();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
