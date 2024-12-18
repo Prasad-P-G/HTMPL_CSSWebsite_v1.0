@@ -858,6 +858,9 @@ header .navbar {
 
 /* Responsive media query code for max width 640px */
 @media screen and (max-width: 640px) {
+  .hero-section .section-content {
+    padding-top: 20%;
+  }
   .service-section {
     width: 100%;
     padding: 30px 0px;
