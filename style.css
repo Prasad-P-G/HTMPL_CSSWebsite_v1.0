@@ -619,6 +619,9 @@ header .navbar {
     width: calc(100% / 3 - 60px);
     background: red;
   } */
+  .contact-section {
+    margin-bottom: 10px;
+  }
 }
 
 /* Responsive media query code for max width 900px */
